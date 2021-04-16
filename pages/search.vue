@@ -25,10 +25,14 @@ export default {
         this.articles = []
         return
       }
-      this.articles = await this.$content('/')
-        .limit(6)
-        .search(searchQuery)
-        .fetch()
+      try {
+        this.articles = await this.$content()
+          .limit(6)
+          .search(searchQuery)
+          .fetch()
+      } catch (e) {
+        console.error(e)
+      }
     },
   },
 }
