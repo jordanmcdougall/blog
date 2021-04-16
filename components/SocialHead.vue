@@ -47,7 +47,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `https://${window.location.hostname}${this.image}`,
+          content: `https://vigilant-agnesi-0201e1.netlify.app${this.image}`,
         },
         {
           hid: 'twitter:site',
