@@ -47,12 +47,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
-        },
-        {
-          hid: 'twitter:image:alt',
-          name: 'twitter:image:alt',
-          content: this.title,
+          content: `https://${window.location.hostname}${this.image}`,
         },
         {
           hid: 'twitter:site',
