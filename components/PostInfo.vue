@@ -19,6 +19,7 @@
           ><img
             class="h-4 w-4 mb-1 text-gray-600 my-auto inline"
             src="../assets/svg/clock.svg"
+            alt="clock icon"
           />
           {{ readingTime }}</span
         >
