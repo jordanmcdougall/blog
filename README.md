@@ -1,20 +1,19 @@
-# blog
+# Blog
 
-## Build Setup
+[![Netlify Status](https://api.netlify.com/api/v1/badges/51de848c-6a1f-4509-8736-25f0ca886f38/deploy-status)](https://app.netlify.com/sites/vigilant-agnesi-0201e1/deploys)
 
-```bash
-# install dependencies
-$ npm install
+## About
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+👋 Hello and welcome to my blog site.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+🚀 I mostly write about technology and it's impact to society.
 
-# generate static project
-$ npm run generate
-```
+## Technology
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+The blog site is a JAM stack created using Nuxt.js and TailwindCSS which is deployed as a static site using Netlify.
+
+## Support
+
+☕ If what I'm doing is helping you, you can support me on Ko-Fi:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y215DMB)
