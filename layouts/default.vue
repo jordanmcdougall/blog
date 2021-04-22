@@ -10,6 +10,19 @@
 </template>
 <script>
 export default {
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-DKQYV6KT7N',
+          async: true,
+        },
+        {
+          src: '/js/gtm.js',
+        },
+      ],
+    }
+  },
   computed: {
     year() {
       return new Date().getFullYear()
