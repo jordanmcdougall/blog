@@ -28,6 +28,7 @@ export default {
           name: 'Home',
           route: '/',
         },
+        { name: 'Posts', route: '/posts' },
         /* {
           name: 'About',
           route: '/about',
