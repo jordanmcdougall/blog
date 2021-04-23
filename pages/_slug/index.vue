@@ -74,7 +74,7 @@ export default {
       if (navigator.share) {
         navigator.share({
           title: this.page.title,
-          url: 'https://vigilant-agnesi-0201e1.netlify.app' + this.$route.path,
+          url: 'https://jordanmcdougall.dev' + this.$route.path,
         })
         // .catch(console.error('oops'))
       } else {
