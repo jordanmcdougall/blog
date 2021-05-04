@@ -1,6 +1,7 @@
 <template>
   <div>
     <AppHeader />
+    <AppPrivacy />
     <AppOffline />
     <Nuxt class="min-h-screen" />
     <p class="static bottom-0 mb-2 px-5 text-gray-500">
@@ -37,8 +38,6 @@ export default {
     gtag('js', new Date())
 
     gtag('config', 'G-DKQYV6KT7N')
-
-    console.log(gtag())
   },
 }
 </script>
