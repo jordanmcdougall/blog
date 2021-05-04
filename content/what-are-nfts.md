@@ -2,7 +2,7 @@
 title: What are NFTs and what do you need to know about cryptoassets?
 description: Still struggling to get to grips with NFTs? Here's what you need to understand about the latest crypto craze.
 author: Jordan McDougall
-image: /img2.jpg
+image: /what-is-nfts.jpg
 image_desc: "Beeple's Everydays: the First 5000 Days recently sold at auction for $63.9M"
 topic: Blockchain
 ---
