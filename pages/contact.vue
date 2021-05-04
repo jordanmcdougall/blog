@@ -1,5 +1,10 @@
 <template>
   <div class="px-10 text-center">
+    <SocialHead
+      title="Contact"
+      description="Get in touch with me."
+      image="/profile-picture.png"
+    />
     <h1 class="text-3xl">Contact Me</h1>
     <p class="mb-5 pt-3 px-10">
       If you need reach out and get in touch with me then you can use the form
@@ -39,6 +44,11 @@ export default {
   data() {
     return {
       email: '',
+    }
+  },
+  head() {
+    return {
+      title: 'Contact',
     }
   },
   computed: {

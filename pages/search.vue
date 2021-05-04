@@ -1,5 +1,10 @@
 <template>
   <div class="">
+    <SocialHead
+      title="Search"
+      description="Search posts on jordanmcdougall.dev."
+      image="/profile-picture.png"
+    />
     <div class="mb-10 flex justify-center">
       <input
         v-model="searchQuery"
@@ -17,6 +22,11 @@ export default {
     return {
       searchQuery: '',
       articles: [],
+    }
+  },
+  head() {
+    return {
+      title: 'Search',
     }
   },
   watch: {

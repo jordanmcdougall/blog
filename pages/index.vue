@@ -1,5 +1,10 @@
 <template>
   <div class="container grid grid-cols-1 sm:max-w-sm md:max-w-4xl mx-auto">
+    <SocialHead
+      title="jordanmcdougall.dev"
+      description="Hi, I'm Jordan. I mostly write about technology and it's impact to society."
+      image="/profile-picture.png"
+    />
     <div class="items-center">
       <img
         class="h-1/4 w-1/4 mx-auto"
@@ -30,7 +35,7 @@
       <div class="flex justify-center mb-10">
         <NuxtLink to="/posts"
           ><button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            class="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             👀 View Posts
           </button>
@@ -79,9 +84,13 @@ export default {
       ],
     }
   },
+  head() {
+    return {
+      title: 'jordanmcdougall.dev',
+    }
+  },
   methods: {
     sharePost() {
-      console.log(this.$route)
       if (navigator.share) {
         navigator
           .share({
