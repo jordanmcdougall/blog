@@ -10,7 +10,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/profile-picture.svg' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon1.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -40,6 +40,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/universal-storage',
   ],
 
   generate: {
@@ -68,6 +69,8 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
+
+  storage: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
