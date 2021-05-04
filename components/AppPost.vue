@@ -8,7 +8,7 @@
               post.updatedAt | formatDate
             }}</span
             ><span
-              class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500"
+              class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded"
               >{{ post.topic }}</span
             >
           </div>
@@ -29,16 +29,16 @@
               >Read more</NuxtLink
             >
             <div>
-              <a href="#" class="flex items-center"
+              <span href="#" class="flex items-center"
                 ><img
                   src="/profile-picture.png"
                   alt="avatar"
                   class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
                 />
-                <h1 class="text-gray-700 font-bold hover:underline">
+                <h1 class="text-gray-700 font-bold">
                   {{ post.author }}
                 </h1>
-              </a>
+              </span>
             </div>
           </div>
         </div>
