@@ -41,6 +41,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/universal-storage',
+    '@nuxtjs/sitemap',
   ],
 
   generate: {
@@ -71,6 +72,17 @@ export default {
   content: {},
 
   storage: {},
+
+  sitemap: {
+    hostname: 'https://jordanmcdougall.dev',
+    path: '/sitemap.xml',
+    gzip: false,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

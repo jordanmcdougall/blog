@@ -26,6 +26,7 @@
     "@nuxt/content": "^1.11.1",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/universal-storage": "^0.5.9",
     "core-js": "^3.10.2",
     "nuxt": "^2.15.4",
