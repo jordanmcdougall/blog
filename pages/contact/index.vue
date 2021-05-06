@@ -20,7 +20,7 @@
       data-netlify="true"
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
-      action="/contact/thank-you"
+      action="/contact/thank-you/"
     >
       <p class="hidden">
         <label
