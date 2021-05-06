@@ -54,7 +54,7 @@
     </ul>
 
     <nuxt-content
-      class="font-serif text-xl text-justify px-5 grid-rows-1"
+      class="font-serif text-xl text-justify px-5 grid-rows-1 pb-10"
       :document="page"
     />
     <!--https://undraw.co/illustrations-->
