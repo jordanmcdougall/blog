@@ -1,11 +1,12 @@
 <template>
   <div
-    v-if="!$store.state.acceptedPrivacy"
+    v-if="!isAcceptedPrivacy"
     class="fixed bottom-0 w-full z-10 bg-red-500 text-center text-white grid grid-cols-1 z-0"
   >
     <div>
       <p class="my-auto px-3 text-white mb-2">
-        🍪 This site uses cookies. By continuing to use you agree with our
+        🍪 This site uses cookies. By continuing to use this site, you agree
+        with our
         <NuxtLink class="underline" to="/privacy">privacy policy</NuxtLink>.
       </p>
       <button
@@ -22,23 +23,20 @@ export default {
   data() {
     return {
       closePrivacy: null,
+      isAcceptedPrivacy: true,
     }
   },
-  computed: {
-    isAcceptedPrivacy() {
-      return this.$store.state.acceptedPrivacy
-    },
-  },
-  beforeMount() {
-    if (this.$storage.getLocalStorage('accept-privacy')) {
-      this.$store.commit('set', true)
+  async created() {
+    if ((await this.$storage.getLocalStorage('accept-privacy')) === true) {
+      this.isAcceptedPrivacy = true
     } else {
-      this.$store.commit('set', false)
+      this.isAcceptedPrivacy = false
     }
   },
   methods: {
     acceptPrivacy() {
-      this.$store.commit('set', true)
+      this.$storage.setLocalStorage('accept-privacy', true)
+      this.isAcceptedPrivacy = true
     },
   },
 }
