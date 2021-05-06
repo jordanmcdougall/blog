@@ -1,5 +1,5 @@
 ---
-title: What are NFTs and what do you need to know about cryptoassets?
+title: What are NFTs and what do you need to know about these cryptoassets?
 description: Still struggling to get to grips with NFTs? Here's what you need to understand about the latest crypto craze.
 author: Jordan McDougall
 image: /what-is-nfts.jpg
@@ -9,7 +9,7 @@ topic: Blockchain
 
 ## What are NFTs?
 
-When something is non-fungible, it is has certain properties or characteristics that makes it unique, meaning it cannot be simply swapped or traded.
+When something is non-fungible, it has certain properties or characteristics that makes it unique, meaning it cannot be simply swapped or traded.
 
 The recent craze in the marketplace has centered around the application of Non-Fungible Tokens (NFTs) as a means of demonstrating provenance and ownership over digital assets, primarily artwork.
 
@@ -17,11 +17,9 @@ The recent craze in the marketplace has centered around the application of Non-F
 
 When purchasing an NFT, the buyer receives both the digital asset as well as proof of ownership through a token, however in some cases, the original creator will also retain control of copyright.
 
-A receipt of the token purchase is written to a blockchain network (most tokens are based on the Ethereum blockchain network however NFTs are available on other networks).
+A receipt of the token purchase is written to a blockchain network (most tokens are based on the Ethereum blockchain network however NFTs are available on other networks). By leveraging the decentralized nature of Distributed Leger Technology (DLT) and its inherent immutable property, it allows for the authenticity of ownership to remain unchallenged.
 
 Some content creators are also offering value add services such as a physical representation of the digital asset that is also provided to the buyer of the NFT.
-
-By leveraging the decentralized nature of Distributed Leger Technology (DLT), it allows for the authenticity of ownership to remain unchallenged.
 
 At the time of writing, the main marketplaces to buy NFTs include:
 
