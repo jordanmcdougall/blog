@@ -37,7 +37,7 @@
         rows="4"
         class="border border-black py-2 pl-2"
       ></textarea>
-      <button v-if="isEmailValid" type="submit" class="bg-red-600 text-white">
+      <button :disabled="!isEmailValid" type="submit" :class="myclass">
         Send
       </button>
     </form>
@@ -62,6 +62,11 @@ export default {
       return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
         this.email
       )
+    },
+    myclass() {
+      return this.isEmailValid
+        ? 'bg-red-600  text-white'
+        : 'bg-gray-600  text-gray-400 cursor-not-allowed'
     },
   },
 }
