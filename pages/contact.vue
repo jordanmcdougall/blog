@@ -14,8 +14,10 @@
       >.
     </p>
     <form
+      v-if="!isSubmitted"
       name="contact"
-      netlify
+      method="POST"
+      data-netlify="true"
       class="grid grid-cols-1 gap-y-6 w-2/3 mx-auto pt-8"
     >
       <input
@@ -35,8 +37,11 @@
         rows="4"
         class="border border-black py-2 pl-2"
       ></textarea>
-      <button v-if="isEmailValid" class="bg-red-600 text-white">Send</button>
+      <button v-if="isEmailValid" type="submit" class="bg-red-600 text-white">
+        Send
+      </button>
     </form>
+    <p v-else>Thank you for your enquiry.</p>
   </div>
 </template>
 <script>
@@ -44,6 +49,7 @@ export default {
   data() {
     return {
       email: '',
+      isSubmitted: false,
     }
   },
   head() {
