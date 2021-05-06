@@ -16,17 +16,18 @@
     <form
       class="w-full text-left"
       name="contact"
-      method="POST"
+      method="post"
+      action="/contact/thank-you"
       data-netlify="true"
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
-      action="/contact/thank-you/"
     >
       <p class="hidden">
         <label
           >Don’t fill this out if you’re human: <input name="bot-field"
         /></label>
       </p>
+      <input type="hidden" value="contact" name="contact" />
       <p class="mb-8">
         <label
           >Your Name:
