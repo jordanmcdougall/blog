@@ -13,21 +13,13 @@
         >Twitter</a
       >.
     </p>
-    <form
-      id="contact"
-      class="w-full text-left"
-      name="contact"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
-      onsubmit="event.preventDefault()"
-    >
+    <form netlify name="contact" method="post" @submit.prevent="handleSubmit">
       <p class="hidden">
         <label
           >Don’t fill this out if you’re human: <input name="bot-field"
         /></label>
       </p>
-      <input type="hidden" value="contact" name="form-name" />
+      <input type="hidden" name="form-name" value="contact" />
       <p class="mb-8">
         <label
           >Your Name:
@@ -62,9 +54,8 @@
       <p class="mb-8">
         <button
           class="mx-auto px-10 w-full cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          @click="submitForm()"
         >
-          Send
+          Submit
         </button>
       </p>
     </form>
@@ -103,22 +94,34 @@ export default {
     },
   },
   methods: {
-    async submitForm() {
-      const myForm = document.getElementById('contact')
-      const formData = new FormData(myForm)
-
-      const options = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString(),
-        url: 'https://jordanmcdougall.dev',
+    createFormDataObj(data) {
+      const formData = new FormData()
+      for (const key of Object.keys(data)) {
+        formData.append(key, data[key])
+      }
+      return formData
+    },
+    handleSubmit() {
+      // This `data` object is what's passed to the createFormDataObj function. It needs all of your form fields, where the key is the name= attribute and the value is the computed value.
+      const data = {
+        'form-name': 'contact',
+        name: this.formData.name,
+        email: this.formData.email,
+        message: this.formData.message,
       }
 
-      await this.$axios(options).then((res) => {
-        console.log(res)
-        console.log('form sent')
-        this.$router.push('/contact/thank-you')
+      console.log(new URLSearchParams(this.createFormDataObj(data)).toString())
+
+      // This POSTs your encoded form to Netlify with the required headers (for text; headers will be different for POSTing a file) and, on success, redirects to the custom success page located at pages/thanks.vue
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(this.createFormDataObj(data)).toString(),
       })
+        // This is how we route to /thanks on successful form submission
+        // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
+        .then(() => this.$router.push('/contact/thank-you'))
+        .catch((error) => alert(error))
     },
   },
 }
