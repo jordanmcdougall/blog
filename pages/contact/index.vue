@@ -14,13 +14,13 @@
       >.
     </p>
     <form
+      id="contact"
       class="w-full text-left"
       name="contact"
-      method="post"
-      action="/contact/thank-you"
       data-netlify="true"
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
+      onsubmit="event.preventDefault()"
     >
       <p class="hidden">
         <label
@@ -32,6 +32,7 @@
         <label
           >Your Name:
           <input
+            v-model="formData.name"
             class="border-solid border-2 border-black w-full pl-2 py-2"
             type="text"
             name="name"
@@ -41,6 +42,7 @@
         <label
           >Your Email:
           <input
+            v-model="formData.email"
             class="border-solid border-2 border-black pl-2 py-2 w-full"
             type="email"
             name="email"
@@ -50,6 +52,7 @@
         <label
           >Your Message:
           <textarea
+            v-model="formData.message"
             class="border-solid border-2 border-black pl-2 py-2 w-full"
             name="message"
             rows="4"
@@ -59,7 +62,7 @@
       <p class="mb-8">
         <button
           class="mx-auto px-10 w-full cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          type="submit"
+          @click="submitForm()"
         >
           Send
         </button>
@@ -73,6 +76,13 @@ export default {
     return {
       email: '',
       isSubmitted: false,
+      formData: {
+        name: '',
+        email: '',
+        message: '',
+        'bot-field': '',
+        'form-name': 'contact',
+      },
     }
   },
   head() {
@@ -90,6 +100,21 @@ export default {
       return this.isEmailValid
         ? 'bg-red-600  text-white'
         : 'bg-gray-600  text-gray-400 cursor-not-allowed'
+    },
+  },
+  methods: {
+    submitForm() {
+      const myForm = document.getElementById('contact')
+      const formData = new FormData(myForm)
+
+      this.$axios('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      }).then(() => {
+        console.log('form sent')
+        this.$router.push('/contact/thank-you')
+      })
     },
   },
 }
