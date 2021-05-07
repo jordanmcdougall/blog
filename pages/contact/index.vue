@@ -103,15 +103,19 @@ export default {
     },
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       const myForm = document.getElementById('contact')
       const formData = new FormData(myForm)
 
-      this.$axios('/', {
+      const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
-      }).then(() => {
+        url: 'https://jordanmcdougall.dev',
+      }
+
+      await this.$axios(options).then((res) => {
+        console.log(res)
         console.log('form sent')
         this.$router.push('/contact/thank-you')
       })
