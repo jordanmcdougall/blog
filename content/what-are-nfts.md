@@ -9,9 +9,9 @@ topic: Blockchain
 
 ## What are NFTs?
 
-When something is non-fungible, it has certain properties or characteristics that makes it unique, meaning it cannot be simply swapped or traded.
+When something is non-fungible, it has certain properties or characteristics that makes it unique, meaning it cannot be simply swapped or traded. Conversely, when something is fungible, it can be considered interchangable. For example, currency is a fungible commodity - you can swap a $10 bill for another $10 bill and still be left with the same perceived value.
 
-The recent craze in the marketplace has centered around the application of Non-Fungible Tokens (NFTs) as a means of demonstrating provenance and ownership over digital assets, primarily artwork.
+The recent craze in the marketplace has centered around the application of Non-Fungible Tokens (NFTs), i.e tokens that cannot be swapped or exchanged for other NFT tokens, as a means of demonstrating provenance and ownership over digital assets.
 
 ## Buying and Selling NFTs
 
@@ -21,7 +21,7 @@ A receipt of the token purchase is written to a blockchain network (most tokens 
 
 Some content creators are also offering value add services such as a physical representation of the digital asset that is also provided to the buyer of the NFT.
 
-At the time of writing, the main marketplaces to buy NFTs include:
+At the time of writing, some marketplaces to buy NFTs include:
 
 1. [OpenSea](https://opensea.io/)
 2. [Rarible](https://rarible.com/)
@@ -33,11 +33,11 @@ For example, artist [Beeple](https://twitter.com/beeple) sold NFT artwork for $6
 
 ## NFTs and Smart Contracts
 
-An interesting property of NFTs is that they can leverage smart contracts. For digital content creators, this introduces the opportunity to develop recurring revenue streams by implementing terms into a smart contract that sees them receive a share of the profits when an NFT is resold.
+An interesting property of NFTs is that they can leverage smart contracts. For digital content creators, this introduces a fantastic opportunity to develop recurring revenue streams by implementing terms into a smart contract that sees them receive a share of the profits when an NFT is resold.
 
 ## Asset Ownership
 
-Being digital, it is not difficult to simply copy or clone the asset, for example to right-click and save an image. Although you can obtain a copy of the asset itself, as these tokens are based on Distributed Ledger Technology, there is no way to also copy the ownership of these digital assets.
+Being digital, it is not difficult to simply copy or clone the asset, for example to right-click and save an image. Although you can obtain a copy of the asset itself, as these tokens are based on Distributed Ledger Technology, there is no way to also duplicate the ownership of these digital assets.
 
 ## Conclusion
 
