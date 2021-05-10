@@ -692,3 +692,12 @@
     >
   </div>
 </template>
+<script>
+export default {
+  head() {
+    return {
+      title: 'Thank You',
+    }
+  },
+}
+</script>
