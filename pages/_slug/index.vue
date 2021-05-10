@@ -6,6 +6,7 @@
       :image="page.image"
     />
     <h1 class="grid-rows-1 font-serif text-5xl px-10">{{ page.title }}</h1>
+    {{ page }}
     <h2 class="grid-rows-1 text-gray-600 text-left px-10 mb-10 subtitle">
       {{ page.description }}
     </h2>

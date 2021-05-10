@@ -1,10 +1,48 @@
+// const path = require('path')
+import path from 'path'
+const fs = require('fs').promises
+
+let posts = []
+
+const constructFeedItem = async (post, dir, hostname) => {
+  const filePath = path.join(__dirname, `dist/rss/${post.slug}/index.html`)
+  const content = await fs.readFile(filePath, 'utf8')
+  const url = `${hostname}/${dir}/${post.slug}`
+  return {
+    title: post.title,
+    id: url,
+    link: url,
+    description: post.description,
+    content,
+  }
+}
+
+const create = async (feed, args) => {
+  const [filePath, ext] = args
+  const hostname = 'https://jordanmcdougall.dev'
+  feed.options = {
+    title: 'jordanmcdougall.dev',
+    description: 'Technology and its impact on society',
+    link: `${hostname}/feed.${ext}`,
+  }
+  const { $content } = require('@nuxt/content')
+  if (posts === null || posts.length === 0)
+    posts = await $content(filePath).fetch()
+
+  for (const post of posts) {
+    const feedItem = await constructFeedItem(post, filePath, hostname)
+    feed.addItem(feedItem)
+  }
+  return feed
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'blog',
+    title: 'jordanmcdougall.dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -42,6 +80,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/universal-storage',
     '@nuxtjs/sitemap',
+    '@nuxtjs/feed',
   ],
 
   generate: {
@@ -83,6 +122,23 @@ export default {
       lastmod: new Date(),
     },
   },
+
+  feed: [
+    {
+      path: '/feed.xml',
+      create,
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      data: ['/', 'xml'],
+    },
+    {
+      path: '/feed.json',
+      create,
+      cacheTime: 1000 * 60 * 15,
+      type: 'json1',
+      data: ['/', 'json'],
+    },
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
