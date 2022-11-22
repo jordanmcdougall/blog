@@ -35,7 +35,7 @@
     "tailwindcss-dark-mode": "^1.1.7"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.1",
+    "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^12.1.1",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
